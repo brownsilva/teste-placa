@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scoreboard Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="timer" id="timer">00:00</div>
+
+    <div class="scoreboard">
+      <div class="athlete-section">
+        <div class="athlete-name">
+          <input type="text" id="athlete1-name" value="Primeiro Atleta">
+        </div>
+        <div class="score-block" id="score1">0</div>
+        <div class="foul-block" id="fouls1">Faltas: 0</div>
+        <div class="control-buttons">
+          <button class="btn" onclick="updateScore(1, 2)">+2</button>
+          <button class="btn" onclick="updateScore(1, 3)">+3</button>
+          <button class="btn" onclick="updateScore(1, 4)">+4</button>
+          <button class="btn" onclick="updateFouls(1, 1)">+F</button>
+          <button class="btn" onclick="updateScore(1, -2)">-2</button>
+          <button class="btn" onclick="updateScore(1, -3)">-3</button>
+          <button class="btn" onclick="updateScore(1, -4)">-4</button>
+          <button class="btn" onclick="updateFouls(1, -1)">-F</button>
+        </div>
+      </div>
+
+      <div class="athlete-section">
+        <div class="athlete-name">
+          <input type="text" id="athlete2-name" value="Segundo Atleta">
+        </div>
+        <div class="score-block" id="score2">0</div>
+        <div class="foul-block" id="fouls2">Faltas: 0</div>
+        <div class="control-buttons">
+          <button class="btn" onclick="updateScore(2, 2)">+2</button>
+          <button class="btn" onclick="updateScore(2, 3)">+3</button>
+          <button class="btn" onclick="updateScore(2, 4)">+4</button>
+          <button class="btn" onclick="updateFouls(2, 1)">+F</button>
+          <button class="btn" onclick="updateScore(2, -2)">-2</button>
+          <button class="btn" onclick="updateScore(2, -3)">-3</button>
+          <button class="btn" onclick="updateScore(2, -4)">-4</button>
+          <button class="btn" onclick="updateFouls(2, -1)">-F</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings">
+      <div>
+        <label>Minutos: <input type="number" id="minutes" min="0" value="0"></label>
+        <label>Segundos: <input type="number" id="seconds" min="0" value="0"></label>
+        <button class="btn" onclick="setTimer()">Definir Tempo</button>
+      </div>
+      <div style="margin-top: 8px;">
+        <button class="btn" onclick="startTimer()">Iniciar</button>
+        <button class="btn" onclick="stopTimer()">Pausar</button>
+        <button class="btn" onclick="resetAll()">Zerar Tudo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
