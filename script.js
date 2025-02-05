@@ -5,7 +5,7 @@ const scores = { 1: 0, 2: 0 };
 const fouls = { 1: 0, 2: 0 };
 
 function startTimer() {
-  stopTimer(); // Garante que nenhum intervalo anterior continue
+  stopTimer(); 
   timerInterval = setInterval(() => {
     if (totalSeconds > 0) {
       totalSeconds--;
@@ -55,3 +55,24 @@ function resetAll() {
   document.getElementById('fouls2').textContent = 'Faltas: 0';
 }
 
+function showWinner() {
+  const athlete1Name = document.getElementById("athlete1-name").value;
+  const athlete2Name = document.getElementById("athlete2-name").value;
+
+  let resultMessage;
+
+  if (scores[1] > scores[2]) {
+    resultMessage = `O vencedor é: ${athlete1Name}`;
+  } else if (scores[2] > scores[1]) {
+    resultMessage = `O vencedor é: ${athlete2Name}`;
+  } else {
+    resultMessage = "Empate!";
+  }
+
+  const winnerDisplay = document.getElementById("winner-display");
+  const winnerText = document.getElementById("winner-text");
+  winnerText.textContent = resultMessage;
+  
+  winnerDisplay.classList.add("visible");
+  setTimeout(() => winnerDisplay.classList.remove("visible"), 5000);
+}
