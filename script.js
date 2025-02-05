@@ -12,7 +12,7 @@ function startTimer() {
       updateTimerDisplay();
     } else {
       stopTimer();
-      showWinner();
+      
     }
   }, 1000);
 }
@@ -49,6 +49,8 @@ function updateTimerDisplay() {
 
 function updateScore(athlete, points) {
   scores[athlete] += points;
+  //Se cada falta diminuir 1 ponto deverá ter esse código abaixo
+  //scores[athlete] -= points;
   document.getElementById(`score${athlete}`).textContent = scores[athlete];
 }
 
