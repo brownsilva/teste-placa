@@ -12,9 +12,23 @@ function startTimer() {
       updateTimerDisplay();
     } else {
       stopTimer();
+      showWinner();
     }
   }, 1000);
 }
+
+function showWinner() {
+  // Verifica o vencedor
+  let winner = scores[1] > scores[2] ? document.getElementById('athlete1-name').value : document.getElementById('athlete2-name').value;
+  document.getElementById('winner-name').textContent = `${winner} é o vencedor!`;
+
+  // Oculta a tela atual
+  document.querySelector('.container').style.display = 'none';
+
+  // Mostra a tela do vencedor
+  document.getElementById('winner-screen').style.display = 'flex';
+}
+
 
 function stopTimer() {
   clearInterval(timerInterval);
@@ -53,5 +67,9 @@ function resetAll() {
   document.getElementById('score2').textContent = '0';
   document.getElementById('fouls1').textContent = 'Faltas: 0';
   document.getElementById('fouls2').textContent = 'Faltas: 0';
+  
+  // Volta para a tela inicial
+  document.querySelector('.container').style.display = 'block';
+  document.getElementById('winner-screen').style.display = 'none';
 }
 
