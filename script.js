@@ -17,10 +17,11 @@ function startTimer() {
   }, 1000);
 }
 
-function showWinner() {
+function showWinner(vencedor) {
   // Verifica o vencedor
-  let winner = scores[1] > scores[2] ? document.getElementById('athlete1-name').value : document.getElementById('athlete2-name').value;
-  document.getElementById('winner-name').textContent = `${winner} é o vencedor!`;
+  
+  let winner = vencedor == 1 ? document.getElementById('athlete1-name').value : document.getElementById('athlete2-name').value;
+  document.getElementById('winner-name').textContent = `O vencedor é ${winner}!`;
 
   // Oculta a tela atual
   document.querySelector('.container').style.display = 'none';
@@ -29,6 +30,9 @@ function showWinner() {
   document.getElementById('winner-screen').style.display = 'flex';
 }
 
+function mostrarVencedor(element){
+  element.textContent = "Vencedor!";
+}
 
 function stopTimer() {
   clearInterval(timerInterval);
@@ -75,24 +79,25 @@ function resetAll() {
   document.getElementById('winner-screen').style.display = 'none';
 }
 
-function showWinner() {
-  const athlete1Name = document.getElementById("athlete1-name").value;
-  const athlete2Name = document.getElementById("athlete2-name").value;
+// function showWinner() {
+//   const athlete1Name = document.getElementById("athlete1-name").value;
+//   const athlete2Name = document.getElementById("athlete2-name").value;
 
-  let resultMessage;
+//   let resultMessage;
 
-  if (scores[1] > scores[2]) {
-    resultMessage = `O vencedor é: ${athlete1Name}`;
-  } else if (scores[2] > scores[1]) {
-    resultMessage = `O vencedor é: ${athlete2Name}`;
-  } else {
-    resultMessage = "Empate!";
-  }
+//   if (scores[1] > scores[2]) {
+//     resultMessage = `O vencedor é: ${athlete1Name}`;
+//   } else if (scores[2] > scores[1]) {
+//     resultMessage = `O vencedor é: ${athlete2Name}`;
+//   } else {
+//     resultMessage = "Empate!";
+//   }
 
-  const winnerDisplay = document.getElementById("winner-display");
-  const winnerText = document.getElementById("winner-text");
-  winnerText.textContent = resultMessage;
+//   const winnerDisplay = document.getElementById("winner-display");
+//   const winnerText = document.getElementById("winner-text");
+//   console.log("RM"+ resultMessage);
+//   winnerText.textContent = resultMessage;
   
-  winnerDisplay.classList.add("visible");
-  setTimeout(() => winnerDisplay.classList.remove("visible"), 5000);
-}
+//   winnerDisplay.classList.add("visible");
+//   setTimeout(() => winnerDisplay.classList.remove("visible"), 5000);
+// }
