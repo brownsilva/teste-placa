@@ -134,7 +134,7 @@ body {
 }
 
 .overlay.visible {
-  visibility: visible;
+  visibility: visible;}
 .winner-screen {
   display: flex;
   flex-direction: column;
