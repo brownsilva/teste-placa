@@ -15,7 +15,7 @@
         <div class="athlete-name">
           <input type="text" id="athlete1-name" value="Primeiro Atleta">
         </div>
-        <div class="score-block" id="score1">0</div>
+        <div class="score-block1" id="score1" onclick="showWinner(1)">0</div>
         <div class="foul-block" id="fouls1">Faltas: 0</div>
         <div class="control-buttons">
           <button class="btn" onclick="updateScore(1, 2)">+2</button>
@@ -33,7 +33,7 @@
         <div class="athlete-name">
           <input type="text" id="athlete2-name" value="Segundo Atleta">
         </div>
-        <div class="score-block" id="score2">0</div>
+        <div class="score-block2" id="score2" onclick="showWinner(2)">0</div>
         <div class="foul-block" id="fouls2">Faltas: 0</div>
         <div class="control-buttons">
           <button class="btn" onclick="updateScore(2, 2)">+2</button>
@@ -68,7 +68,7 @@
 
   <!-- Tela de Vencedor -->
   <div class="winner-screen" id="winner-screen" style="display:none;">
-    <h1 id="winner-name" style="font-size: 48px;"></h1>
+    <h1 class="winner-name" id="winner-name" ></h1>
     <button class="btn" onclick="resetAll()">Iniciar Nova Luta</button>
   </div>
 </div>

@@ -59,7 +59,20 @@ body {
   border-radius: 10px;
 }
 
-.score-block {
+.score-block1 {
+  background: red;
+  color: black;
+  width: 400px;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 270px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.score-block2 {
   background: white;
   color: black;
   width: 400px;
@@ -135,6 +148,8 @@ body {
 
 .overlay.visible {
   visibility: visible;}
+  visibility: visible;{}
+
 .winner-screen {
   display: flex;
   flex-direction: column;
@@ -148,6 +163,10 @@ body {
 }
 
 .winner-screen h1 {
-  font-size: 100px;
-  color: yellow;
+  font-size: 109px;
+  color: white;
+}
+
+.winner-name{
+  font-size: 109px;
 }
